@@ -457,6 +457,15 @@
             flex-shrink: 0;
         }
 
+        .avatar-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 32px rgba(5, 150, 105, 0.3);
+            border: 3px solid #10b981;
+        }
+
         .avatar-circle {
             width: 100px;
             height: 100px;
@@ -706,6 +715,33 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .hero-visual {
+                height: 400px;
+                margin-top: 2rem;
+            }
+
+            .floating-card {
+                position: relative !important;
+                display: block;
+                margin-bottom: 1rem;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                animation: none !important;
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .card-1, .card-2, .card-3 {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+            }
+
             .services-grid,
             .expertise-grid {
                 grid-template-columns: 1fr;
@@ -814,7 +850,7 @@
                 <div class="principal-card fade-in">
                     <div class="principal-header">
                         <div class="principal-avatar">
-                            <div class="avatar-circle">SB</div>
+                            <img src="https://sbkv.github.io/sbkv_profile_picture.png" alt="Serge Bykov" class="avatar-photo">
                         </div>
                         <div class="principal-info">
                             <h3>Serge Bykov</h3>
@@ -978,7 +1014,7 @@
                 
                 <div class="service-card fade-in">
                     <div class="service-icon">🤖</div>
-                    <h3>AI Virtual Assistant Platform</h3>
+                    <h3>AI Virtual Assistant Platform - Canadian Telco</h3>
                     <p>Built comprehensive AI/ML Virtual Assistant solutions using Rasa AI for retail, HR, and digital channels. Full-stack implementation with Redis Enterprise, Kafka event streaming, and NLP training data optimization.</p>
                 </div>
                 
@@ -990,19 +1026,19 @@
                 
                 <div class="service-card fade-in">
                     <div class="service-icon">📞</div>
-                    <h3>Contact Center Digitization</h3>
+                    <h3>Contact Center Digitization - Canadian Telco</h3>
                     <p>Transformed contact center operations with real-time BPM NextBestAction system, AI/ML Call Reason Prediction, and Customer360 dashboards using .NET, IBM BPM, Oracle, and Cassandra stack.</p>
                 </div>
                 
                 <div class="service-card fade-in">
                     <div class="service-icon">🏢</div>
-                    <h3>Enterprise CRM Solutions</h3>
+                    <h3>Enterprise CRM Solutions - Canadian Telco</h3>
                     <p>Led cross-channel CRM implementations for Canadian Bank #2 using MS Dynamics, comprehensive SOA integration with DataPower ESB, and PingFederate IdP for SAML authentication across enterprise systems.</p>
                 </div>
                 
                 <div class="service-card fade-in">
                     <div class="service-icon">🌐</div>
-                    <h3>Digital Transformation</h3>
+                    <h3>Digital Transformation - Canadian Telco</h3>
                     <p>Modernized legacy PowerBuilder applications to Angular/SpringBoot microservices for Canadian Telco #2, integrating with IBM CICS programs and delivering scalable web-based SPA solutions.</p>
                 </div>
             </div>
