@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald IT Consulting Inc. - Elite Technology Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .stat-label {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-1 {
+            top: 10%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-2 {
+            top: 30%;
+            right: 20%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .card-3 {
+            bottom: 20%;
+            left: 20%;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 5%;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .expertise-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .tech-item {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #475569;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .clients {
+            margin-top: 4rem;
+        }
+
+        .clients h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #10b981;
+        }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .client-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 5%;
+            background: #f8fafc;
+        }
+
+        /* Principal Consultant Section */
+        .principal {
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .principal-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .principal-card {
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .principal-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .principal-avatar {
+            flex-shrink: 0;
+        }
+
+        .avatar-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 8px 32px rgba(5, 150, 105, 0.3);
+        }
+
+        .principal-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .principal-info .title {
+            font-size: 1.2rem;
+            color: #059669;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .credentials span {
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .principal-summary {
+            margin-bottom: 2.5rem;
+        }
+
+        .principal-summary h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .principal-summary p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .principal-highlights {
+            margin-bottom: 2.5rem;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .highlight-item {
+            background: rgba(16, 185, 129, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+        }
+
+        .highlight-item h5 {
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .highlight-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .principal-expertise {
+            margin-bottom: 2.5rem;
+        }
+
+        .principal-expertise h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+        }
+
+        .client-experience {
+            margin-bottom: 2.5rem;
+        }
+
+        .client-experience h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .client-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .client-logo {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            border-color: #10b981;
+            color: #059669;
+            transform: translateY(-2px);
+        }
+
+        .principal-contact {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact-note {
+            margin-top: 1rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item h4 {
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #64748b;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: #cbd5e1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .principal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-tags {
+                justify-content: center;
+            }
+
+            .client-logos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Emerald IT</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#principal">Principal Consultant</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Elite <span class="gradient-text">Technology Consulting</span> for Enterprise Success</h1>
+                <p>Since 2004, Emerald IT Consulting has delivered transformative solutions to Canada's leading financial and telecommunications enterprises. Our unique problem-solving methodology drives innovation across system architecture, integration, and digital transformation.</p>
+                <a href="#contact" class="cta-button">Start Your Project</a>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Enterprise Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <h4>🏗️ System Architecture</h4>
+                    <p>Enterprise-grade solutions</p>
+                </div>
+                <div class="floating-card card-2">
+                    <h4>🔐 Identity & Access</h4>
+                    <p>Secure authentication systems</p>
+                </div>
+                <div class="floating-card card-3">
+                    <h4>🤖 AI & Machine Learning</h4>
+                    <p>Intelligent automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Consultant Section -->
+    <section id="principal" class="principal">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Meet Our <span class="gradient-text">Principal Consultant</span></h2>
+                <p class="section-subtitle">Leading enterprise transformations with over 20 years of proven expertise</p>
+            </div>
+            
+            <div class="principal-content">
+                <div class="principal-card fade-in">
+                    <div class="principal-header">
+                        <div class="principal-avatar">
+                            <div class="avatar-circle">SB</div>
+                        </div>
+                        <div class="principal-info">
+                            <h3>Serge Bykov</h3>
+                            <p class="title">Principal Consultant, Solution Architecture</p>
+                            <div class="credentials">
+                                <span>B.Math, Computer Science</span>
+                                <span>Management Studies</span>
+                                <span>University of Waterloo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="principal-summary">
+                        <h4>Summary of Expertise</h4>
+                        <p>Serge Bykov has over 20 years of experience in large enterprise systems architecture and design, during which he has obtained rich and thorough experience from building user and agent experience journeys, designing distributed systems integrations, to SaaS CIAM providers migration to the cloud using various industry standards like OIDC, SAML, JWT and OAuth.</p>
+                        
+                        <p>Serge takes pride in driving security by design approach while practicing Applied Solution Architecture methodology. He has a reputable track record in playing the lead technology and architecture role on many large multi-million enterprise programs at major Canadian financial institutions and telecoms, showcasing unparalleled expertise across the enterprise sector.</p>
+                    </div>
+                    
+                    <div class="principal-highlights">
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>🏆 Leadership Excellence</h5>
+                                <p>Led CIAM, Identity Proofing and Identity Orchestration for Canadian Telco - #1 priority project for CEO</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>🔐 Security-First Approach</h5>
+                                <p>Delivery-seasoned technology leader focused on solving security-first enterprise technology challenges</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>🎯 Trusted Advisor</h5>
+                                <p>Known for problem ownership, attention to detail, and unparalleled expertise in secure distributed systems</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>💼 Enterprise Impact</h5>
+                                <p>Lead architect for multi-million dollar programs including Canadian Bank's Precision Pricing Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="principal-expertise">
+                        <h4>Specialized Practice Areas</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">Solution Architecture Consulting</span>
+                            <span class="tag">Customer Identity Access Management</span>
+                            <span class="tag">Integration Architecture</span>
+                            <span class="tag">Design Assurance Consulting</span>
+                            <span class="tag">Data Architecture</span>
+                            <span class="tag">Digital Identity & Proofing</span>
+                            <span class="tag">Contact Center Technology</span>
+                            <span class="tag">AI/ML Solutions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="client-experience">
+                        <h4>Client Portfolio</h4>
+                        <div class="client-logos">
+                            <div class="client-logo">Canadian Telco</div>
+                            <div class="client-logo">Canadian Bank</div>
+                            <div class="client-logo">Canadian Bank #2</div>
+                            <div class="client-logo">Canadian Bank #3</div>
+                            <div class="client-logo">Canadian Telco #2</div>
+                            <div class="client-logo">Canadian Mobile</div>
+                        </div>
+                    </div>
+                    
+                    <div class="principal-contact">
+                        <a href="mailto:serge@emeraldit.ca" class="cta-button">Connect with Serge</a>
+                        <p class="contact-note">Direct consultation available for strategic technology initiatives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Our <span class="gradient-text">Core Services</span></h2>
+                <p class="section-subtitle">Comprehensive technology solutions tailored for enterprise success across financial and telecommunications sectors</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Enterprise System Architecture</h3>
+                    <p>Design and implement scalable, robust system architectures that support your business growth and ensure optimal performance across all enterprise applications.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔐</div>
+                    <h3>Identity & Access Management</h3>
+                    <p>Secure your enterprise with comprehensive IAM solutions, including authentication, authorization, and compliance frameworks tailored to financial regulations.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔗</div>
+                    <h3>System Integration</h3>
+                    <p>Seamlessly connect disparate systems and applications, enabling smooth data flow and operational efficiency across your entire technology ecosystem.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🤖</div>
+                    <h3>Virtual Assistant Solutions</h3>
+                    <p>Develop intelligent virtual assistants and chatbots that enhance customer experience and streamline internal operations with AI-powered automation.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📱</div>
+                    <h3>Digital Self-Service Applications</h3>
+                    <p>Create intuitive consumer-facing applications and agent systems that empower users with self-service capabilities while reducing operational costs.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">👥</div>
+                    <h3>Staff Augmentation</h3>
+                    <p>Access top-tier IT talent specializing in Java, Python, AI/ML, design, integration, business analysis, and database technologies for your critical projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="expertise-grid">
+                <div class="expertise-content fade-in">
+                    <h2>Technology <span class="gradient-text">Expertise</span></h2>
+                    <p>Leading enterprise transformations with deep expertise in Customer Identity & Access Management (CIAM), AI/ML Virtual Assistants, and large-scale system integration. From $30M CIAM platforms to contact center digitization, our proven track record includes Java/J2EE enterprise solutions, event streaming architectures, and cloud-native implementations across major financial and telecommunications enterprises.</p>
+                    <a href="#contact" class="cta-button">Discuss Your Needs</a>
+                </div>
+                
+                <div class="tech-stack fade-in">
+                    <div class="tech-item">Java/J2EE Enterprise</div>
+                    <div class="tech-item">AI/ML & NLP (Rasa)</div>
+                    <div class="tech-item">CIAM & Identity (Okta/Auth0)</div>
+                    <div class="tech-item">Event Streaming (Kafka)</div>
+                    <div class="tech-item">Microservices & SOA</div>
+                    <div class="tech-item">Cloud & DevSecOps (AWS/K8s)</div>
+                    <div class="tech-item">Database Technologies</div>
+                    <div class="tech-item">API Gateway & Integration</div>
+                    <div class="tech-item">Enterprise Platforms</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Project Highlights Section -->
+    <section class="projects" style="padding: 8rem 5%; background: #f8fafc;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Recent <span class="gradient-text">Project Highlights</span></h2>
+                <p class="section-subtitle">Multi-million dollar enterprise transformations delivered for Canada's largest organizations</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔐</div>
+                    <h3>$30M CIAM Platform - Canadian Telco</h3>
+                    <p>Led enterprise-wide Customer Identity & Access Management transformation preventing account takeovers through Okta CIC/Auth0 integration, ID proofing with 1Kosmos, and OIDC/OAuth2 standards implementation across all digital properties.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Virtual Assistant Platform</h3>
+                    <p>Built comprehensive AI/ML Virtual Assistant solutions using Rasa AI for retail, HR, and digital channels. Full-stack implementation with Redis Enterprise, Kafka event streaming, and NLP training data optimization.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💰</div>
+                    <h3>$35M Precision Pricing - Canadian Bank</h3>
+                    <p>Architected dynamic precision pricing platform for Real Estate, Lending, and Credit channels using Java SpringBoot microservices, machine learning models, and enterprise integration patterns.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📞</div>
+                    <h3>Contact Center Digitization</h3>
+                    <p>Transformed contact center operations with real-time BPM NextBestAction system, AI/ML Call Reason Prediction, and Customer360 dashboards using .NET, IBM BPM, Oracle, and Cassandra stack.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏢</div>
+                    <h3>Enterprise CRM Solutions</h3>
+                    <p>Led cross-channel CRM implementations for Canadian Bank #2 using MS Dynamics, comprehensive SOA integration with DataPower ESB, and PingFederate IdP for SAML authentication across enterprise systems.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🌐</div>
+                    <h3>Digital Transformation</h3>
+                    <p>Modernized legacy PowerBuilder applications to Angular/SpringBoot microservices for Canadian Telco #2, integrating with IBM CICS programs and delivering scalable web-based SPA solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2>Trusted by Canada's <span class="gradient-text">Leading Enterprises</span></h2>
+                <p>Since 2004, Emerald IT Consulting Inc. has been the trusted technology partner for major financial institutions and telecommunications companies across the Toronto, Montreal, and Ottawa corridor.</p>
+                <p>Our unique problem-solving methodology, combined with deep industry expertise, enables us to deliver solutions that not only meet current needs but anticipate future challenges.</p>
+                
+                <div class="clients">
+                    <h3>Industry Focus</h3>
+                    <div class="client-grid">
+                        <div class="client-item">
+                            <h4>Financial Services</h4>
+                            <p>Banks, Credit Unions, Fintech</p>
+                        </div>
+                        <div class="client-item">
+                            <h4>Telecommunications</h4>
+                            <p>Carriers, Service Providers</p>
+                        </div>
+                        <div class="client-item">
+                            <h4>Enterprise Technology</h4>
+                            <p>Large Corporations, Gov't</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2>Ready to Transform Your <span class="gradient-text">Technology?</span></h2>
+                <p>Let's discuss how Emerald IT Consulting can drive your next innovation project. Our team is ready to deliver enterprise-grade solutions tailored to your specific needs.</p>
+                <a href="mailto:info@emeraldit.ca" class="cta-button">Start the Conversation</a>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📧 Email</h4>
+                        <p>serge@emeraldit.ca</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>🌐 Website</h4>
+                        <p>www.emeraldit.ca</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📍 Serving</h4>
+                        <p>Toronto • Montreal • Ottawa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Emerald IT Consulting Inc. All rights reserved. | Registered in Canada since 2004</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic floating animation for hero cards
+        const cards = document.querySelectorAll('.floating-card');
+        cards.forEach((card, index) => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add some interactive elements
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#10b981';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#e2e8f0';
+            });
+        });
+    </script>
+</body>
+</html>
