@@ -1,0 +1,64 @@
+<svg viewBox="-70 -70 140 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="deepEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001a12"/>
+      <stop offset="30%" style="stop-color:#003d29"/>
+      <stop offset="60%" style="stop-color:#005d3f"/>
+      <stop offset="100%" style="stop-color:#007a55"/>
+    </linearGradient>
+    
+    <linearGradient id="pinnacle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000"/>
+      <stop offset="20%" style="stop-color:#001a12"/>
+      <stop offset="50%" style="stop-color:#003d29"/>
+      <stop offset="100%" style="stop-color:#26a69a"/>
+    </linearGradient>
+    
+    <linearGradient id="brilliantCut" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#003d29"/>
+      <stop offset="40%" style="stop-color:#00695c"/>
+      <stop offset="80%" style="stop-color:#00897b"/>
+      <stop offset="100%" style="stop-color:#4db6ac"/>
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" flood-opacity="0.2" flood-color="#000"/>
+    </filter>
+  </defs>
+  
+  <!-- Central diamond processor -->
+  <polygon points="0,-20 16,-11 20,0 16,11 0,20 -16,11 -20,0 -16,-11" 
+           fill="url(#pinnacle)" stroke="#000" stroke-width="1.5" filter="url(#shadow)"/>
+  <polygon points="0,-14 11,-7 14,0 11,7 0,14 -11,7 -14,0 -11,-7" 
+           fill="#4db6ac"/>
+  
+  <!-- Neural network nodes (CIAM identity points) -->
+  <polygon points="0,-50 8,-42 8,-34 0,-26 -8,-34 -8,-42" 
+           fill="url(#deepEmerald)" stroke="#000" stroke-width="1"/>
+  <polygon points="-35,-35 -27,-27 -27,-19 -35,-11 -43,-19 -43,-27" 
+           fill="url(#deepEmerald)" stroke="#000" stroke-width="1"/>
+  <polygon points="35,-35 43,-27 43,-19 35,-11 27,-19 27,-27" 
+           fill="url(#deepEmerald)" stroke="#000" stroke-width="1"/>
+  <polygon points="-50,0 -42,8 -42,16 -50,24 -58,16 -58,8" 
+           fill="url(#brilliantCut)" stroke="#000" stroke-width="1"/>
+  <polygon points="50,0 58,8 58,16 50,24 42,16 42,8" 
+           fill="url(#brilliantCut)" stroke="#000" stroke-width="1"/>
+  <polygon points="0,50 8,42 8,34 0,26 -8,34 -8,42" 
+           fill="url(#deepEmerald)" stroke="#000" stroke-width="1"/>
+  <polygon points="-35,35 -27,27 -27,19 -35,11 -43,19 -43,27" 
+           fill="url(#deepEmerald)" stroke="#000" stroke-width="1"/>
+  <polygon points="35,35 43,27 43,19 35,11 27,19 27,27" 
+           fill="url(#brilliantCut)" stroke="#000" stroke-width="1"/>
+  
+  <!-- Quantum connections (distributed systems) -->
+  <path d="M0,-26 Q-16,-24 -35,-19 M0,-26 Q16,-24 35,-19 M-16,-11 Q-28,-7 -50,12 M16,-11 Q28,-7 50,12 M0,20 Q-16,24 -35,30 M0,20 Q16,24 35,30" 
+        stroke="url(#brilliantCut)" stroke-width="2.5" fill="none" opacity="0.7"/>
+  
+  <!-- Identity orchestration pathways -->
+  <path d="M-35,-19 Q-20,-8 -50,12 M35,-19 Q20,-8 50,12 M-35,30 Q0,35 35,30" 
+        stroke="#007a55" stroke-width="1.8" fill="none" opacity="0.8"/>
+  
+  <!-- Core brilliance -->
+  <circle cx="0" cy="0" r="7" fill="white" opacity="0.9"/>
+  <circle cx="0" cy="0" r="3" fill="#4db6ac"/>
+</svg>
