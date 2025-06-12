@@ -41,12 +41,22 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             font-size: 1.8rem;
             font-weight: 700;
             background: linear-gradient(135deg, #059669, #10b981);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
         }
 
         .nav-menu {
@@ -838,6 +848,15 @@
             .client-logos {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .logo {
+                gap: 0.5rem;
+            }
+
+            .logo-icon {
+                width: 42px;
+                height: 42px;
+            }
         }
 
         /* Scroll animations */
@@ -856,7 +875,10 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Emerald IT</div>
+            <div class="logo">
+                <img src="https://emeraldit.ca/standalone_logo_svg.svg" alt="Emerald IT Logo" class="logo-icon">
+                <span>Emerald IT</span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -891,7 +913,6 @@
                 <h1>Elite <span class="gradient-text">Technology Consulting</span> for Enterprise Success</h1>
                 <p>Since 2004, Emerald IT Consulting has delivered transformative solutions to Canada's leading financial and telecommunications enterprises. Our unique problem-solving methodology drives innovation across system architecture, integration, and digital transformation.</p>
                 <a href="#contact" class="cta-button">Start Your Project</a>
-                
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">20+</div>
@@ -937,8 +958,8 @@
                 <div class="principal-card fade-in">
                     <div class="principal-header">
                         <div class="principal-avatar">
-                        	<img src="./sbkv_profile_picture.png" alt="Serge Bykov" class="avatar-photo">
-			</div>
+                            <img src="./sbkv_profile_picture.png" alt="Serge Bykov" class="avatar-photo">
+                        </div>
                         <div class="principal-info">
                             <h3>Serge Bykov</h3>
                             <p class="title">Principal Consultant, Solution Architecture</p>
