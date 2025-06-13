@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Expert Team - Emerald IT Consulting Inc.</title>
+    <link rel="icon" type="image/svg+xml" href="./standalone_logo_svg.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 2px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu ul li {
+            padding: 0.5rem 5%;
+        }
+
+        .mobile-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 12rem 5% 6rem 5%;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 8rem 5%;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .member-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .member-avatar {
+            flex-shrink: 0;
+        }
+
+        .avatar-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 8px 32px rgba(5, 150, 105, 0.3);
+        }
+
+        .member-info h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info .title {
+            font-size: 1.1rem;
+            color: #059669;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-info .experience {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .member-summary {
+            margin-bottom: 2rem;
+        }
+
+        .member-summary p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .member-expertise {
+            margin-bottom: 2rem;
+        }
+
+        .member-expertise h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+        }
+
+        .member-highlights {
+            margin-bottom: 2rem;
+        }
+
+        .member-highlights h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .highlight-item {
+            background: rgba(16, 185, 129, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #10b981;
+        }
+
+        .highlight-item h5 {
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .highlight-item p {
+            color: #64748b;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            text-align: center;
+            color: white;
+        }
+
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: #cbd5e1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .desktop-only {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .member-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                gap: 0.5rem;
+            }
+
+            .logo-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .team-member {
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="https://emeraldit.ca/standalone_logo_svg.svg" alt="Emerald IT Logo" class="logo-icon">
+                <span>Emerald IT</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#expertise">Expertise</a></li>
+                <li><a href="index.html#principal">Principal Consultant</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html#contact" class="cta-button desktop-only">Get Started</a>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="index.html#expertise" onclick="closeMenu()">Expertise</a></li>
+                <li><a href="index.html#principal" onclick="closeMenu()">Principal Consultant</a></li>
+                <li><a href="team.html" onclick="closeMenu()">Our Team</a></li>
+                <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+                <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+                <li><a href="index.html#contact" class="cta-button" onclick="closeMenu()" style="display: inline-block; margin: 1rem 0;">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our <span class="gradient-text">Expert Team</span></h1>
+            <p>Meet the seasoned professionals driving innovation and excellence in enterprise technology solutions across Canada's leading organizations.</p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="team-grid">
+
+                <!-- Aman Singh -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">AS</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Aman Singh</h3>
+                            <p class="title">Senior Data Scientist & AI/ML Specialist</p>
+                            <p class="experience">7+ years • M.Sc. Computer Science (Multimedia Intelligence) • University of Alberta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Aman is an accomplished AI/ML expert with extensive experience in computer vision, natural language processing, and predictive analytics. He has successfully delivered cutting-edge solutions for major corporations including Air Canada, Rheinmetall Canada, and Thales, achieving model accuracies consistently above 96%.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">Machine Learning & Deep Learning</span>
+                            <span class="tag">Computer Vision & Image Processing</span>
+                            <span class="tag">Natural Language Processing</span>
+                            <span class="tag">TensorFlow & Keras</span>
+                            <span class="tag">Python & PySpark</span>
+                            <span class="tag">AWS & Cloud Computing</span>
+                            <span class="tag">Augmented Reality</span>
+                            <span class="tag">Predictive Maintenance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>Air Canada Event Detection</h5>
+                                <p>97.3% accuracy system for flight event detection using black box data</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Rheinmetall Predictive Maintenance</h5>
+                                <p>98.5% accuracy system for tank maintenance using 500GB+ datasets</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Thales Railway Safety</h5>
+                                <p>98% accuracy obstacle detection system for railway track monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arseniy Isakov -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">AI</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Arseniy Isakov</h3>
+                            <p class="title">Senior Technical Architect & Java Enterprise Specialist</p>
+                            <p class="experience">15+ years • M.Sc. Engineering • Large Scale Enterprise Systems Expert</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Arseniy brings 15 years of enterprise systems architecture experience with deep expertise in Java/J2EE, SOA, and modern integration patterns. He has led technical architecture initiatives for major Canadian financial institutions and telecoms, specializing in Kafka, identity management, and distributed systems.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">Java/J2EE Enterprise Architecture</span>
+                            <span class="tag">Apache Kafka & Event Streaming</span>
+                            <span class="tag">SOA & Microservices</span>
+                            <span class="tag">KeyCloak & OAuth/SAML</span>
+                            <span class="tag">Apache Camel & ESB</span>
+                            <span class="tag">Docker & Containerization</span>
+                            <span class="tag">Oracle & Cassandra</span>
+                            <span class="tag">JBPM & Business Process</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>Bell Canada BRS Architect</h5>
+                                <p>Technical leadership across development teams with Kafka and Oracle integration</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>TD Bank JBPM Enhancement</h5>
+                                <p>REST API improvements and Angular application optimization</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>AlertDriving Security Integration</h5>
+                                <p>OAuth2 and KeyCloak identity provider solutions with Apache Camel migration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brij Sharma -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">BS</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Brij Sharma</h3>
+                            <p class="title">AWS Java Cloud Professional & Technical Architect</p>
+                            <p class="experience">14+ years • Microservices & Cloud Architecture • B.Tech Engineering</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Brij is a seasoned AWS Java Cloud Professional with 14+ years of experience in designing scalable microservices and cloud-native solutions. He has extensive experience in CIAM implementations, financial services, and telecom domains, with deep expertise in Auth0, Okta, and enterprise-grade security solutions.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">AWS Cloud Architecture</span>
+                            <span class="tag">Java Spring Boot Microservices</span>
+                            <span class="tag">CIAM (Auth0/Okta)</span>
+                            <span class="tag">Apache Kafka & Event Streaming</span>
+                            <span class="tag">Docker & Kubernetes</span>
+                            <span class="tag">OAuth & OpenID Connect</span>
+                            <span class="tag">Terraform & Infrastructure as Code</span>
+                            <span class="tag">Site Reliability Engineering</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>CIAM Implementation Success</h5>
+                                <p>25% reduction in user onboarding time through comprehensive Auth0 solutions</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Security Enhancement</h5>
+                                <p>20% reduction in unauthorized access through multi-factor authentication strategies</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>SRE Excellence</h5>
+                                <p>50% downtime reduction through proactive monitoring and incident response systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Danny Elkind -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">DE</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Danny Elkind</h3>
+                            <p class="title">Senior Technical Architect & Solutions Integration Expert</p>
+                            <p class="experience">20+ years • B.Sc. Computer Information Systems • Fortune 500 Experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Danny brings over 20 years of enterprise solutions experience across finance, entertainment, and telecommunications. He has worked with Fortune 500 companies including Walt Disney World, Bank of America, and TD Bank, specializing in large-scale system integration, API development, and cloud architectures.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">Enterprise System Integration</span>
+                            <span class="tag">AWS Platform & Services</span>
+                            <span class="tag">Java/J2EE Applications</span>
+                            <span class="tag">REST/SOAP API Development</span>
+                            <span class="tag">Agile & Scrum Leadership</span>
+                            <span class="tag">Docker & OpenShift</span>
+                            <span class="tag">Kafka & Event Streaming</span>
+                            <span class="tag">Business Process Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>Bell Canada Virtual Assistant</h5>
+                                <p>ChatBot development using RASA on OpenShift for customer and employee self-service</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Canada Post Digital Transformation</h5>
+                                <p>Led multiple web and mobile teams through Agile transformation and AWS migration</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Disney Enterprise CMS</h5>
+                                <p>Technical lead for enterprise-wide content management serving multiple business channels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- David Small -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">DS</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>David W. Small</h3>
+                            <p class="title">Enterprise Architect & Digital Transformation Leader</p>
+                            <p class="experience">15+ years • Mobile & Cloud Architecture • PMI Certified</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>David is an accomplished enterprise architect specializing in modernization programs and digital transformation initiatives. He has extensive experience in telecommunications, pharma, and manufacturing sectors, with particular expertise in iOS development, API architecture, and legacy system modernization.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">iOS/Swift Mobile Development</span>
+                            <span class="tag">Enterprise Architecture</span>
+                            <span class="tag">API Strategy & Design</span>
+                            <span class="tag">AWS & Cloud Solutions</span>
+                            <span class="tag">React & Node.js</span>
+                            <span class="tag">Kafka & Event Streaming</span>
+                            <span class="tag">Legacy System Modernization</span>
+                            <span class="tag">CI/CD & DevOps</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>Bell Scaled Agile Solutions</h5>
+                                <p>Solution architect for .Net applications integrated with BPM, Kafka, and AI/ML environments</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Healthcare Modernization</h5>
+                                <p>Led IBM iSeries legacy conversions to modern client API architecture for PBM healthcare</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Sun Life Mobile Platform</h5>
+                                <p>Implemented IBM Mobile First platform and API versioning for iOS/Android development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santosh Kadge -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">SK</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Santosh Kadge</h3>
+                            <p class="title">Data Scientist & Machine Learning Expert</p>
+                            <p class="experience">7+ years • MBA Finance + B.E. Electronics • Healthcare, Banking & Insurance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Santosh is a versatile data scientist with extensive experience in healthcare, banking, and insurance analytics. He has developed breakthrough algorithms for investigator disambiguation in bioinformatics and created automation solutions that reduced processing time from 10 days to 4 hours using advanced NLP and machine learning techniques.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">Machine Learning & Data Mining</span>
+                            <span class="tag">Natural Language Processing</span>
+                            <span class="tag">Python & R Programming</span>
+                            <span class="tag">Big Data (Hadoop, Spark, Hive)</span>
+                            <span class="tag">Bioinformatics & Healthcare Analytics</span>
+                            <span class="tag">MongoDB & NoSQL</span>
+                            <span class="tag">Tableau & Data Visualization</span>
+                            <span class="tag">Predictive Analytics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>Bioinformatics Breakthrough</h5>
+                                <p>Developed self-learning co-author network algorithm for investigator disambiguation</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Process Automation Success</h5>
+                                <p>Reduced therapeutic area assignment from 10 days to 4 hours using NLP automation</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Large Scale Data Processing</h5>
+                                <p>Successfully handled 33 million+ biomedical literature records for clinical trials optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tariq Ali -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">TA</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Tariq Ali</h3>
+                            <p class="title">Senior Business Analyst & Product Owner</p>
+                            <p class="experience">17+ years • Certified Scrum Master/Product Owner • Banking & Telecom Expert</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Tariq is a seasoned business analyst with 17+ years of experience in banking and telecommunications. He specializes in Agile methodologies, process improvement, and large-scale digital transformation projects. His expertise in bridging business and technology teams has delivered significant operational improvements and cost savings.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">Business Analysis & Requirements</span>
+                            <span class="tag">Agile/Scrum Product Management</span>
+                            <span class="tag">Process Improvement & Re-engineering</span>
+                            <span class="tag">Contact Center Optimization</span>
+                            <span class="tag">IVR Design & Implementation</span>
+                            <span class="tag">Change Management</span>
+                            <span class="tag">Stakeholder Management</span>
+                            <span class="tag">JIRA & Confluence</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>CIBC IVR Transformation</h5>
+                                <p>Improved customer experience and reduced drop-off calls through IVR re-engineering</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>HP Process Optimization</h5>
+                                <p>75% labor budget reduction by creating automated system functions</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Bell Canada ChatBot Leadership</h5>
+                                <p>Senior Product Owner for Bell's multi-brand ChatBot project covering Lucky, Virgin, and Bell</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Michelle Farzaneh -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <div class="avatar-circle">MF</div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Mahshid (Michelle) Farzaneh</h3>
+                            <p class="title">Machine Learning Developer & NLP Specialist</p>
+                            <p class="experience">5+ years • M.Sc. Electrical Engineering • Graduate Certificate NLP & Data Science</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-summary">
+                        <p>Michelle is a specialized Machine Learning Developer with advanced certifications in NLP and Data Science from University of Toronto. Currently with Bell Canada's Conversational AI team, she develops sophisticated chatbots and NLU systems, with expertise in RASA framework and privacy-focused NLP solutions.</p>
+                    </div>
+                    
+                    <div class="member-expertise">
+                        <h4>Core Expertise</h4>
+                        <div class="expertise-tags">
+                            <span class="tag">RASA Chatbot Development</span>
+                            <span class="tag">Natural Language Processing</span>
+                            <span class="tag">Conversational AI & NLU</span>
+                            <span class="tag">TensorFlow & Keras</span>
+                            <span class="tag">Python & Machine Learning</span>
+                            <span class="tag">Data Privacy & Redaction</span>
+                            <span class="tag">OpenShift & CI/CD</span>
+                            <span class="tag">SAFe Agile Methodology</span>
+                        </div>
+                    </div>
+                    
+                    <div class="member-highlights">
+                        <h4>Notable Achievements</h4>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h5>Bell Multi-Brand ChatBot</h5>
+                                <p>Core developer for Bell, Lucky Mobile, Virgin Mobile, and HR chatbot systems</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Privacy Protection Innovation</h5>
+                                <p>Created NLP redaction feature to mask employee private information using Spacy and RegEx</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h5>Academic Excellence</h5>
+                                <p>A+ GPA in both NLP and Data Science graduate certificates from University of Toronto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Ready to Work with Our <span class="gradient-text">Expert Team?</span></h2>
+            <p>Connect with our seasoned professionals to discuss your enterprise technology challenges and discover how our collective expertise can drive your next innovation project.</p>
+            <a href="index.html#contact" class="cta-button">Start Your Project</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Emerald IT Consulting Inc. All rights reserved. | Registered in Canada since 2004</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
